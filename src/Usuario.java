@@ -1,6 +1,6 @@
 import java.util.LinkedList;
 
-public class Usuario {
+public abstract class Usuario {
 	private String nombre;
 	private String apellido;
 	private int dni;

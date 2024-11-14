@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 public abstract class Usuario {
 	private String nombre;
 	private String apellido;
@@ -72,4 +74,7 @@ public abstract class Usuario {
 				+ nombreUsuario + ", contrasena=" + contrasena + ", listaUsuarios=" + listaUsuarios + "]";
 	}
 	
+	public void registrar() {
+		
+	}
 }

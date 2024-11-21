@@ -75,6 +75,29 @@ public abstract class Usuario {
 	}
 	
 	public void registrar() {
+		nombre = validarCadena(JOptionPane.showInputDialog("Ingresa tu nombre."));
+		apellido = validarCadena(JOptionPane.showInputDialog("Ingresa tu apellido."));
+		dni = validarInteger(Integer.parseInt(JOptionPane.showInputDialog("Ingresa tu DNI.")));
+		nombreUsuario = (nombre.substring(0, 1) + apellido).toLowerCase();
+		contrasena = validarCadena(JOptionPane.showInputDialog("Ingresa tu contraseña."));
+		String contrasena2 = validarCadena(JOptionPane.showInputDialog("Confirma tu contraseña."));
+		while (contrasena != contrasena2) {
+			contrasena2 = validarCadena(JOptionPane.showInputDialog("Error: Las contraseñas no coinciden. Reingresa tu contraseña."));
+		}
 		
+	}
+	
+	public String validarCadena(String cadena) {
+		while (cadena.isEmpty()) {
+			cadena = JOptionPane.showInputDialog("Error. Reingresa los datos.");
+		}
+		return cadena;
+	}
+	
+	public int validarInteger(int numero) {
+		while (numero < 0) {
+			numero = Integer.parseInt(JOptionPane.showInputDialog("Error. Reingresa los datos."));
+		}
+		return numero;
 	}
 }

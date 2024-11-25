@@ -29,25 +29,27 @@ public class Main {
 			case 0:
 				cliente.registrar();
 				listaUsuarios.add(cliente);
-				opcionCliente = seleccionarOpcionCliente(opcionCliente);
-				
-				switch (opcionCliente) {
-				case 0:
+				do {				
+					opcionCliente = seleccionarOpcionCliente(opcionCliente);
 					
-					break;
-				case 1:
-					cuenta.depositar();
-					break;
-				case 2:
-					
-					break;
-				case 3:
-					
-					break;
-				case 4:
-					JOptionPane.showMessageDialog(null, "Cerrando sesión...");
-					break;
-				}
+					switch (opcionCliente) {
+					case 0:
+						
+						break;
+					case 1:
+						cuenta.depositar(estadisticas);
+						break;
+					case 2:
+						cuenta.retirar(estadisticas);
+						break;
+					case 3:
+						cliente.verDatos(cuenta, estadisticas);
+						break;
+					case 4:
+						JOptionPane.showMessageDialog(null, "Cerrando sesión...");
+						break;
+					}
+				} while (opcionCliente != 4);
 				break;
 			case 1:
 				admin.registrar();

@@ -30,4 +30,20 @@ public class Cliente extends Usuario {
 		nroTarjeta = (int)(Math.random() * 90000) + 10000;
 	}
 	
+	public void verDatos(Cuenta cuenta, Estadistica estadistica) {
+		JOptionPane.showMessageDialog(null, "Datos del Cliente\n"
+				+ "Nombre: " + nombre + "\n"
+				+ "Apellido: " + apellido + "\n"
+				+ "Nombre de usuario: " + nombreUsuario + "\n"
+				+ "DNI: " + dni + "\n"
+				+ "Contraseña: ·············\n"
+				+ "______________________\n"
+				+ "Datos de la cuenta\n"
+				+ "Número de tarjeta: " + nroTarjeta + "\n"
+				+ "Saldo: " + cuenta.getSaldo() + "\n"
+				+ "Dinero transferido: " + estadistica.getDineroTransferido() + "\n"
+				+ "Dinero depositado: " + estadistica.getDineroDepositado() + "\n"
+				+ "Dinero retirado: " + estadistica.getDineroRetirado());
+	}
+	
 }

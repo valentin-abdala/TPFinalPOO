@@ -40,10 +40,28 @@ public class Cuenta {
 		return "Cuenta [cliente=" + cliente + ", saldo=" + saldo + ", estadistica=" + estadistica + "]";
 	}
 	
-	public void depositar() {
+	public void depositar(Estadistica estadistica) {
 		double deposito = validarDouble(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el monto que deseas depositar.")));
 		saldo = saldo + deposito;
 		JOptionPane.showMessageDialog(null, "Depósito realizado con éxito.");
+		
+		estadistica.setDineroDepositado(estadistica.getDineroDepositado() + deposito);
+		estadistica.setnroMovimientos(estadistica.getnroMovimientos() + 1);
+		estadistica.setDineroEnMovimiento(estadistica.getDineroEnMovimiento() + deposito);
+	}
+	
+	public void retirar(Estadistica estadistica) {
+		double retiro = validarDouble(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el monto que deseas retirar.")));
+		if (saldo < retiro) {
+			JOptionPane.showMessageDialog(null, "No tienes el saldo suficiente para realizar este retiro.");
+		} else {
+			saldo = saldo - retiro;
+			JOptionPane.showMessageDialog(null, "Retiro realizado con éxito.");
+			
+			estadistica.setDineroRetirado(estadistica.getDineroRetirado() + retiro);
+			estadistica.setnroMovimientos(estadistica.getnroMovimientos() + 1);
+			estadistica.setDineroEnMovimiento(estadistica.getDineroEnMovimiento() + retiro);
+		}
 	}
 	
 	public double validarDouble(double numero) {

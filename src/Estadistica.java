@@ -1,15 +1,15 @@
 
 public class Estadistica {
-	private int nroTransferencias;
+	private int nroMovimientos;
 	private int clientesRegistrados;
 	private double dineroEnMovimiento;
 	private double dineroTransferido;
 	private double dineroDepositado;
 	private double dineroRetirado;
 	
-	public Estadistica(int nroTransferencias, int clientesRegistrados, double dineroEnMovimiento,
+	public Estadistica(int nroMovimientos, int clientesRegistrados, double dineroEnMovimiento,
 			double dineroTransferido, double dineroDepositado, double dineroRetirado) {
-		this.nroTransferencias = nroTransferencias;
+		this.nroMovimientos = nroMovimientos;
 		this.clientesRegistrados = clientesRegistrados;
 		this.dineroEnMovimiento = dineroEnMovimiento;
 		this.dineroTransferido = dineroTransferido;
@@ -17,12 +17,12 @@ public class Estadistica {
 		this.dineroRetirado = dineroRetirado;
 	}
 
-	public int getNroTransferencias() {
-		return nroTransferencias;
+	public int getnroMovimientos() {
+		return nroMovimientos;
 	}
 
-	public void setNroTransferencias(int nroTransferencias) {
-		this.nroTransferencias = nroTransferencias;
+	public void setnroMovimientos(int nroMovimientos) {
+		this.nroMovimientos = nroMovimientos;
 	}
 
 	public int getClientesRegistrados() {
@@ -67,7 +67,7 @@ public class Estadistica {
 
 	@Override
 	public String toString() {
-		return "Estadistica [nroTransferencias=" + nroTransferencias + ", clientesRegistrados=" + clientesRegistrados
+		return "Estadistica [nroMovimientos=" + nroMovimientos + ", clientesRegistrados=" + clientesRegistrados
 				+ ", dineroEnMovimiento=" + dineroEnMovimiento + ", dineroTransferido=" + dineroTransferido
 				+ ", dineroDepositado=" + dineroDepositado + ", dineroRetirado=" + dineroRetirado + "]";
 	}

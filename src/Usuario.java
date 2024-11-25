@@ -3,11 +3,11 @@ import java.util.LinkedList;
 import javax.swing.JOptionPane;
 
 public abstract class Usuario {
-	private String nombre;
-	private String apellido;
+	protected String nombre;
+	protected String apellido;
 	protected int dni;
 	protected String nombreUsuario;
-	private String contrasena;
+	protected String contrasena;
 	private LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 	
 	public Usuario(String nombre, String apellido, int dni, String nombreUsuario, String contrasena,

@@ -1,4 +1,4 @@
 
 public enum OpcionesAdmin {
-	Estadísticas, Datos, Salir
+	Datos, Salir
 }

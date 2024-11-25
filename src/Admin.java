@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 public class Admin extends Usuario {
 	private int idEmpleado;
 	private Banco banco;
@@ -30,6 +32,12 @@ public class Admin extends Usuario {
 	@Override
 	public String toString() {
 		return "Admin [idEmpleado=" + idEmpleado + ", banco=" + banco + "]";
+	}
+
+	@Override
+	public void registrar() {
+		super.registrar();
+		idEmpleado = (int)(Math.random() * 900) + 100;
 	}
 	
 }

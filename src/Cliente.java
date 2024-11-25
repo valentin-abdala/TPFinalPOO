@@ -1,5 +1,7 @@
 import java.util.LinkedList;
 
+import javax.swing.JOptionPane;
+
 public class Cliente extends Usuario {
 	private int nroTarjeta;
 	
@@ -20,6 +22,12 @@ public class Cliente extends Usuario {
 	@Override
 	public String toString() {
 		return "Cliente [nroTarjeta=" + nroTarjeta + "]";
+	}
+
+	@Override
+	public void registrar() {
+		super.registrar();
+		nroTarjeta = (int)(Math.random() * 90000) + 10000;
 	}
 	
 }

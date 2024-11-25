@@ -7,19 +7,23 @@ public class Main {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
-		
+		LinkedList<Transferencia> movimientos = new LinkedList<Transferencia>();
+		Estadistica estadisticas = new Estadistica(0, 0, 0, 0, 0, 0);
+		Banco banco = new Banco("", estadisticas);
 		Cliente cliente = new Cliente("", "", 0, "", "", listaUsuarios, 0);
+		Admin admin = new Admin(null, null, 0, null, null, listaUsuarios, 0, banco);
 		
-		int opcionUsuario = 1, opcionCliente = 1, opcionAdmin = 1;
+		
+		int opcionUsuario = 0, opcionCliente = 0, opcionAdmin = 0;
 		
 		do {
-			seleccionarUsuario(opcionUsuario);
+			opcionUsuario = seleccionarUsuario(opcionUsuario);
 			
 			switch (opcionUsuario) {
 			case 0:
 				cliente.registrar();
 				listaUsuarios.add(cliente);
-				seleccionarOpcionCliente(opcionCliente);
+				opcionCliente = seleccionarOpcionCliente(opcionCliente);
 				
 				switch (opcionCliente) {
 				case 0:
@@ -40,7 +44,21 @@ public class Main {
 				}
 				break;
 			case 1:
+				admin.registrar();
+				listaUsuarios.add(cliente);
 				seleccionarOpcionAdmin(opcionAdmin);
+				
+				switch (opcionAdmin) {
+				case 0:
+					
+					break;
+				case 1:
+					
+					break;
+				case 2:
+					JOptionPane.showMessageDialog(null, "Cerrando sesión...");
+					break;
+				}
 				break;
 			case 2:
 				JOptionPane.showMessageDialog(null, "Cerrando sistema...");

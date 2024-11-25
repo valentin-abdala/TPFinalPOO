@@ -81,7 +81,7 @@ public abstract class Usuario {
 		nombreUsuario = (nombre.substring(0, 1) + apellido).toLowerCase();
 		contrasena = validarCadena(JOptionPane.showInputDialog("Ingresa tu contraseña."));
 		String contrasena2 = validarCadena(JOptionPane.showInputDialog("Confirma tu contraseña."));
-		while (contrasena != contrasena2) {
+		while (!contrasena.equals(contrasena2)) {
 			contrasena2 = validarCadena(JOptionPane.showInputDialog("Error: Las contraseñas no coinciden. Reingresa tu contraseña."));
 		}
 		

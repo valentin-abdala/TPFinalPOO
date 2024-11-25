@@ -84,6 +84,9 @@ public abstract class Usuario {
 		while (!contrasena.equals(contrasena2)) {
 			contrasena2 = validarCadena(JOptionPane.showInputDialog("Error: Las contraseñas no coinciden. Reingresa tu contraseña."));
 		}
+	}
+	
+	public void verDatos(Cuenta cuenta, Estadistica estadistica) {
 		
 	}
 	

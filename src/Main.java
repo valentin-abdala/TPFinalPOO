@@ -9,7 +9,7 @@ public class Main {
 		LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 		LinkedList<Transferencia> movimientos = new LinkedList<Transferencia>();
 		Estadistica estadisticas = new Estadistica(0, 0, 0, 0, 0, 0);
-		Banco banco = new Banco("Banco Riachuelo", estadisticas);
+		Banco banco = new Banco("ABDABank", estadisticas);
 		Cliente valen = new Cliente("Valentín", "Abdala", 46293877, "vabdala", "valen123", listaUsuarios, 47869);
 		Cuenta cuentaValen = new Cuenta(valen, 2000, estadisticas);
 		listaUsuarios.add(valen);
@@ -18,6 +18,7 @@ public class Main {
 		listaUsuarios.add(profe);
 		Cliente cliente = new Cliente("", "", 0, "", "", listaUsuarios, 0);
 		Cuenta cuenta = new Cuenta(cliente, 0, estadisticas);
+		Transferencia transferencia = new Transferencia(cuenta, cuenta, 0, null, null);
 		Admin admin = new Admin("", "", 0, "", "", listaUsuarios, 0, banco);
 		
 		int opcionUsuario = 0, opcionCliente = 0, opcionAdmin = 0;
@@ -29,12 +30,17 @@ public class Main {
 			case 0:
 				cliente.registrar();
 				listaUsuarios.add(cliente);
+				estadisticas.setClientesRegistrados(estadisticas.getClientesRegistrados() + 1);
 				do {				
 					opcionCliente = seleccionarOpcionCliente(opcionCliente);
 					
 					switch (opcionCliente) {
 					case 0:
+						transferencia.transferir(cliente, valen, profe, cuentaValen, cuentaProfe, estadisticas);
 						
+						if (transferencia.transferir(cliente, valen, profe, cuentaValen, cuentaProfe, estadisticas)) {
+							movimientos.add(transferencia);
+						}
 						break;
 					case 1:
 						cuenta.depositar(estadisticas);
@@ -54,6 +60,9 @@ public class Main {
 			case 1:
 				admin.registrar();
 				listaUsuarios.add(cliente);
+				estadisticas.setClientesRegistrados(estadisticas.getClientesRegistrados() + 1);
+				
+				do {
 				seleccionarOpcionAdmin(opcionAdmin);
 				
 				switch (opcionAdmin) {
@@ -61,16 +70,11 @@ public class Main {
 					
 					break;
 				case 1:
-					
-					break;
-				case 2:
 					JOptionPane.showMessageDialog(null, "Cerrando sesión...");
 					break;
 				}
-				break;
-			case 2:
-				JOptionPane.showMessageDialog(null, "Cerrando sistema...");
-				break;
+			} while (opcionAdmin != 1);
+			break;
 			}
 			
 		} while (opcionUsuario != 2);

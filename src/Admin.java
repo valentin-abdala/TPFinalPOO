@@ -40,4 +40,6 @@ public class Admin extends Usuario {
 		idEmpleado = (int)(Math.random() * 900) + 100;
 	}
 	
+	
+	
 }

@@ -30,7 +30,9 @@ public class Cliente extends Usuario {
 		nroTarjeta = (int)(Math.random() * 90000) + 10000;
 	}
 	
+	@Override
 	public void verDatos(Cuenta cuenta, Estadistica estadistica) {
+		super.verDatos(cuenta, estadistica);
 		JOptionPane.showMessageDialog(null, "Datos del Cliente\n"
 				+ "Nombre: " + nombre + "\n"
 				+ "Apellido: " + apellido + "\n"

@@ -62,4 +62,9 @@ public class Transferencia {
 				+ ", fecha=" + fecha + ", hora=" + hora + "]";
 	}
 	
+	public void transferir(Cuenta cuentaOrigen, Cuenta cuentaDestino, Cliente cliente) {
+		
+		cliente.getListaUsuarios();
+	}
+	
 }

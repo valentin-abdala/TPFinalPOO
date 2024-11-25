@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Cuenta {
 	private Cliente cliente;
@@ -37,6 +38,19 @@ public class Cuenta {
 	@Override
 	public String toString() {
 		return "Cuenta [cliente=" + cliente + ", saldo=" + saldo + ", estadistica=" + estadistica + "]";
+	}
+	
+	public void depositar() {
+		double deposito = validarDouble(Double.parseDouble(JOptionPane.showInputDialog("Ingresa el monto que deseas depositar.")));
+		saldo = saldo + deposito;
+		JOptionPane.showMessageDialog(null, "Depósito realizado con éxito.");
+	}
+	
+	public double validarDouble(double numero) {
+		while (numero <= 0) {
+			numero = Double.parseDouble(JOptionPane.showInputDialog("Error. Reingresa los datos."));
+		}
+		return numero;
 	}
 	
 }

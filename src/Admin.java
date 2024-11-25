@@ -31,7 +31,7 @@ public class Admin extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Admin [idEmpleado=" + idEmpleado + ", banco=" + banco + "]";
+		return "Cliente: " + nombreUsuario + " - DNI: " + dni + " - ID empleado: " + idEmpleado + "\n";
 	}
 
 	@Override

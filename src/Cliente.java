@@ -21,7 +21,7 @@ public class Cliente extends Usuario {
 
 	@Override
 	public String toString() {
-		return "Cliente [nroTarjeta=" + nroTarjeta + "]";
+		return "Cliente: " + nombreUsuario + " - DNI: " + dni + " - Número de tarjeta: " + nroTarjeta + "\n";
 	}
 
 	@Override

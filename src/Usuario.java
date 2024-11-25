@@ -5,8 +5,8 @@ import javax.swing.JOptionPane;
 public abstract class Usuario {
 	private String nombre;
 	private String apellido;
-	private int dni;
-	private String nombreUsuario;
+	protected int dni;
+	protected String nombreUsuario;
 	private String contrasena;
 	private LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 	

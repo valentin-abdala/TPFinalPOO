@@ -9,10 +9,16 @@ public class Main {
 		LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 		LinkedList<Transferencia> movimientos = new LinkedList<Transferencia>();
 		Estadistica estadisticas = new Estadistica(0, 0, 0, 0, 0, 0);
-		Banco banco = new Banco("", estadisticas);
+		Banco banco = new Banco("Banco Riachuelo", estadisticas);
+		Cliente valen = new Cliente("Valentín", "Abdala", 46293877, "vabdala", "valen123", listaUsuarios, 47869);
+		Cuenta cuentaValen = new Cuenta(valen, 2000, estadisticas);
+		listaUsuarios.add(valen);
+		Cliente profe = new Cliente("Gamaliel", "Quiroz", 0, "gquiroz", "gama123", listaUsuarios, 78934);
+		Cuenta cuentaProfe = new Cuenta(profe, 4500, estadisticas);
+		listaUsuarios.add(profe);
 		Cliente cliente = new Cliente("", "", 0, "", "", listaUsuarios, 0);
-		Admin admin = new Admin(null, null, 0, null, null, listaUsuarios, 0, banco);
-		
+		Cuenta cuenta = new Cuenta(cliente, 0, estadisticas);
+		Admin admin = new Admin("", "", 0, "", "", listaUsuarios, 0, banco);
 		
 		int opcionUsuario = 0, opcionCliente = 0, opcionAdmin = 0;
 		
@@ -30,7 +36,7 @@ public class Main {
 					
 					break;
 				case 1:
-					
+					cuenta.depositar();
 					break;
 				case 2:
 					

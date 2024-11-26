@@ -8,8 +8,8 @@ public class Main {
 		// TODO Auto-generated method stub
 		LinkedList<Usuario> listaUsuarios = new LinkedList<Usuario>();
 		LinkedList<Transferencia> movimientos = new LinkedList<Transferencia>();
-		Estadistica estadisticas = new Estadistica(0, 0, 0, 0, 0, 0);
-		Banco banco = new Banco("ABDABank", estadisticas);
+		Estadistica estadisticas = new Estadistica(0, 2, 0, 0, 0, 0);
+		Banco banco = new Banco("AbdaBank", estadisticas);
 		Cliente valen = new Cliente("Valentín", "Abdala", 46293877, "vabdala", "valen123", listaUsuarios, 47869);
 		Cuenta cuentaValen = new Cuenta(valen, 2000, estadisticas);
 		listaUsuarios.add(valen);
@@ -49,7 +49,7 @@ public class Main {
 						cuenta.retirar(estadisticas);
 						break;
 					case 3:
-						cliente.verDatos(cuenta, estadisticas);
+						cliente.verDatos(cuenta, estadisticas, banco);
 						break;
 					case 4:
 						JOptionPane.showMessageDialog(null, "Cerrando sesión...");
@@ -63,18 +63,24 @@ public class Main {
 				estadisticas.setClientesRegistrados(estadisticas.getClientesRegistrados() + 1);
 				
 				do {
-				seleccionarOpcionAdmin(opcionAdmin);
+				opcionAdmin = seleccionarOpcionAdmin(opcionAdmin);
 				
 				switch (opcionAdmin) {
 				case 0:
-					
+					admin.verDatos(cuenta, estadisticas, banco);
 					break;
 				case 1:
+					JOptionPane.showMessageDialog(null, listaUsuarios);
+					break;
+				case 2:
 					JOptionPane.showMessageDialog(null, "Cerrando sesión...");
 					break;
 				}
-			} while (opcionAdmin != 1);
-			break;
+			} while (opcionAdmin != 2);
+				break;
+			case 2:
+				JOptionPane.showMessageDialog(null, "Cerrando sistema...");
+				break;
 			}
 			
 		} while (opcionUsuario != 2);

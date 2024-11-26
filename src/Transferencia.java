@@ -86,11 +86,11 @@ public class Transferencia {
 							+ "Cuenta origen\n"
 							+ "Nombre: " + cliente.getNombre() + " " + cliente.getApellido() + "\n"
 							+ "Número de tarjeta: " + cliente.getNroTarjeta() + "\n"
-							+ "Saldo: " + cuentaOrigen.getSaldo() + "\n"
+							+ "Saldo: $" + cuentaOrigen.getSaldo() + "\n"
 							+ "Cuenta destino\n"
 							+ "Nombre: " + valen.getNombre() + " " + valen.getApellido() + "\n"
 							+ "Número de tarjeta: " + valen.getNroTarjeta() + "\n"
-							+ "Saldo: " + cuentaDestino.getSaldo()
+							+ "Saldo: $" + cuentaDestino.getSaldo() + "\n"
 							+ "Fecha: " + LocalDate.now() + "\n"
 							+ "Hora: " + LocalTime.now());
 					
@@ -112,11 +112,11 @@ public class Transferencia {
 							+ "Cuenta origen\n"
 							+ "Nombre: " + cliente.getNombre() + " " + cliente.getApellido() + "\n"
 							+ "Número de tarjeta: " + cliente.getNroTarjeta() + "\n"
-							+ "Saldo: " + cuentaOrigen.getSaldo() + "\n"
+							+ "Saldo: $" + cuentaOrigen.getSaldo() + "\n"
 							+ "Cuenta destino\n"
 							+ "Nombre: " + profe.getNombre() + " " + profe.getApellido() + "\n"
 							+ "Número de tarjeta: " + profe.getNroTarjeta() + "\n"
-							+ "Saldo: " + cuentaDestino.getSaldo()
+							+ "Saldo: $" + cuentaDestino.getSaldo() + "\n"
 							+ "Fecha: " + LocalDate.now() + "\n"
 							+ "Hora: " + LocalTime.now());
 					

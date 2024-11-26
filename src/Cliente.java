@@ -31,8 +31,8 @@ public class Cliente extends Usuario {
 	}
 	
 	@Override
-	public void verDatos(Cuenta cuenta, Estadistica estadistica) {
-		super.verDatos(cuenta, estadistica);
+	public void verDatos(Cuenta cuenta, Estadistica estadistica, Banco banco) {
+		super.verDatos(cuenta, estadistica, banco);
 		JOptionPane.showMessageDialog(null, "Datos del Cliente\n"
 				+ "Nombre: " + nombre + "\n"
 				+ "Apellido: " + apellido + "\n"

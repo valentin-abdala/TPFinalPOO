@@ -86,7 +86,7 @@ public abstract class Usuario {
 		}
 	}
 	
-	public void verDatos(Cuenta cuenta, Estadistica estadistica) {
+	public void verDatos(Cuenta cuenta, Estadistica estadistica, Banco banco) {
 		
 	}
 	

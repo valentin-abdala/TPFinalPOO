@@ -40,6 +40,7 @@ public class Main {
 						
 						if (transferencia.transferir(cliente, valen, profe, cuentaValen, cuentaProfe, estadisticas)) {
 							movimientos.add(transferencia);
+							JOptionPane.showMessageDialog(null, movimientos);
 						}
 						break;
 					case 1:
@@ -59,7 +60,7 @@ public class Main {
 				break;
 			case 1:
 				admin.registrar();
-				listaUsuarios.add(cliente);
+				listaUsuarios.add(admin);
 				estadisticas.setClientesRegistrados(estadisticas.getClientesRegistrados() + 1);
 				
 				do {
